@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Stealth Fight</title>
+</head>
+
+<body>
+    <div id="player-log">Waiting for game to start<br></div>
+
+    <div id="template" hidden>
+        <div class="id-display"></div> <!-- constant -->
+        <div class="man-log"></div> <!-- append -->
+        <pre class="board"></pre> <!-- overwrite -->
+        <div class="health"></div> <!-- overwrite -->
+        <div class="energy"></div> <!-- overwrite -->
+        <select class="type-select">
+            <option value="m">Move</option>
+            <option value="d">Dash</option>
+            <option value="c">Charge</option>
+            <option value="r">Rest</option>
+        </select>
+        <select class="dir-select">
+            <option value="u">Up</option>
+            <option value="d">Down</option>
+            <option value="l">Left</option>
+            <option value="r">Right</option>
+        </select>
+        <div contenteditable="true" class="selfnotes">Type notes for self here...</div>
+    </div>
+
+    <!-- P.mpp ( = 4) divs will be added here, with id = single numeric index of man in string format -->
+    
+    <button id="submit" onclick="onclicksubmit()" hidden>Submit moves</button>
+
+
+<style>
+    .board
+    {
+        border-style: solid;
+        line-height: 1;
+        display: table;
+        font-size: medium;
+        font-family: monospace;
+    }
+</style>
+
+
+
+
+    <!-- client-side scripting -->
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script type="text/javascript">
+    
+    var P = {}; // should be identical to P in app.js
+    P.xtiles = 4;
+    P.ytiles = 4;
+    P.gap = 2; // adjacent cells have gap = 1
+    P.xlen = P.xtiles*P.gap;
+    P.ylen = P.ytiles*P.gap;
+    P.mpp = 4; // men per player
+    // P.mpp * playersTotal <= P.xtiles * P.ytiles is a necessary condition
+    P.view = 3; // "view" cells visible +-x and +-y
+    P.viewgridlen = 2*P.view + 1; // = 7 for view = 3
+    P.initialhealth = 100;
+
+    var div = document.getElementById("template");
+    for(let r=0; r<P.mpp; r++)
+    {
+        clone = div.cloneNode(true);
+        clone.id = r.toString();
+        clone.getElementsByClassName("id-display")[0] += "Man " + r.toString();
+        clone.hidden = true; // remain hidden until game starts
+        document.body.appendChild(clone);
+    }
+    
+    var socket = io.connect();
+    
+    function displayState(localState)
+    {
+        for(let r =0; r < P.mpp; r++)
+        {
+            document.getElementById(r.toString()).getElementsByClassName("board")[0].innerHTML = "";
+            if(localState[r].health <= 0)
+            {
+                document.getElementById(r.toString()).getElementsByClassName("health")[0].innerHTML = "Health: 0";   
+            }
+            else
+            {
+                for(let i=0; i < P.viewgridlen; i++)
+                {
+                    for(let j=0; j < P.viewgridlen; j++)
+                    {
+                        s = (i == P.view && j == P.view) ? "O" : (localState[r].board[i][j].f ? "X" : " ");
+                        document.getElementById(r.toString()).getElementsByClassName("board")[0].innerHTML += s;
+                    }
+                    document.getElementById(r.toString()).getElementsByClassName("board")[0].innerHTML += "<br>";
+                }
+                document.getElementById(r.toString()).getElementsByClassName("health")[0].innerHTML = "Health: " + localState[r].health;
+                document.getElementById(r.toString()).getElementsByClassName("energy")[0].innerHTML = "Energy: " + localState[r].energy;
+            }
+        }
+    }
+
+    socket.on("start game",function(localState){
+        document.getElementById("player-log").innerHTML += "Game started<br>";
+        document.getElementById("submit").hidden = false;
+        for(r = 0; r < P.mpp; r++)
+            document.getElementById(r.toString()).hidden = false;
+        displayState(localState);
+    });
+
+    socket.on("update state",function(localState){
+        document.getElementById("player-log").innerHTML += "Next turn received<br>";
+        displayState(localState);
+    });
+
+    function onclicksubmit()
+    {
+        var move = [];
+        for (let r=0; r < P.mpp; r++)
+        {
+            move[r] = {};
+            move[r].type = document.getElementById(r.toString()).getElementsByClassName("type-select")[0].value;
+            move[r].dir = document.getElementById(r.toString()).getElementsByClassName("dir-select")[0].value;
+        }
+        socket.emit("move",move);
+        document.getElementById("player-log").innerHTML += "Moves sent<br>";
+    }
+
+</script>
+</body>
+</html>
