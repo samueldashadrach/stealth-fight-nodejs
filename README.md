@@ -47,4 +47,4 @@ Health and energy of immediately nearby men may be made visible in a future upda
 6. Do not use health in place of energy unless absolutely necessary.
 7. Ally with trustworthy players and form pacts to not fight each other's men. Share information and destroy common enemies, before finally turning on each other.
 8. A lot of partial information is available throughout the game, don't ignore it just because you are unable to make complete deductions. Incomplete information may turn out useful later on.
-9. An advanced strategy could involve feeding false information to an ally in order to get his/her men in vulnerable positions before betraying him/her. This however can have an effect on your trustworthiness for the rest of the game (or future games, if you're playing with the same people).
+9. An advanced strategy could involve feeding false information to an ally in order to get his men in vulnerable positions before betraying him. This however can have an effect on your trustworthiness for the rest of the game (or future games, if you're playing with the same people).
