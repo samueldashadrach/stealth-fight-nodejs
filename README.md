@@ -43,7 +43,8 @@ Health and energy of immediately nearby men may be made visible in a future upda
 2. Try to get your men close to each other as much as possible to avoid getting ganged up on.
 3. Isolate and surround opponent men to eliminate them while losing minimal health yourself. Ganging up is more cost-effective than 1v1 fights.
 4. Watch out for your energy bar. Balance moves with rest to ensure you don't end up in fights without energy.
-5. Do not use health in place of energy unless absolutely necessary.
-6. Ally with trustworthy players and form pacts to not fight each other's men. Share information and destroy common enemies, before finally turning on each other.
-7. A lot of partial information is available throughout the game, don't ignore it just because you are unable to make complete deductions. Incomplete information may turn out useful later on.
-8. Feel free to strategically lie and betray your allies, and get their men into situations they can't escape. This however can have an effect on your trustworthiness for the rest of the game (or future games, if you're playing with the same people).
+5. Combats are essentially a game of stone paper scissors - try to identify tells or patterns in your opponents' moves.
+6. Do not use health in place of energy unless absolutely necessary.
+7. Ally with trustworthy players and form pacts to not fight each other's men. Share information and destroy common enemies, before finally turning on each other.
+8. A lot of partial information is available throughout the game, don't ignore it just because you are unable to make complete deductions. Incomplete information may turn out useful later on.
+9. Feel free to strategically lie and betray your allies, and get their men into situations they can't escape. This however can have an effect on your trustworthiness for the rest of the game (or future games, if you're playing with the same people).
