@@ -3,6 +3,7 @@
 Turn-wise online strategy game (currently for 2-6 players) with elements of bluff, hidden information and diplomacy
 
 Built using NodeJS and Socket.io
+
 Currently under development, all rights reserved
 
 ## Rules
