@@ -18,7 +18,7 @@ Each man can only see a certain distance around him. Moreover, the identities of
 
 ### Health system
 
-Each man has a health bar and an energy bar. Energy is consumed in all moves (except "rest"), some more than others. Health is lost only when other men deal damage. Energy can be regained rapidly using "rest" moves, health can be regained but at a much slower rate. A man's health places an upper limit on how much energy he can store in his energy bar, making health a more precious resource. Health can be consumed in place of energy if a man's energy hits zero.
+Each man has a health bar and an energy bar. Energy is consumed in all moves (except "rest"), some more than others. Health is lost only when other men deal damage. Energy can be regained rapidly using "rest" moves; health can be regained too but at a much slower rate. A man's health places an upper limit on how much energy he can store in his energy bar, making health a more precious resource. Health can be consumed in place of energy if a man's energy hits zero.
 
 A man dies permanently when his health hits zero, and no longer occupies a position on the grid. A player is eliminated from the game when all his men are dead.
 
