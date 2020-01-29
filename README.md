@@ -18,7 +18,7 @@ Each man can only see a certain distance around him. Moreover, the identities of
 
 ### Health system
 
-Each man has a health bar and an energy bar. Energy is consumed in all moves (except "rest"), some more than others. Health is lost only when other men deal damage. Energy can be regained rapidly using "rest" moves, health can be regained but at a much slower rate. A man's health places an upper limit on how much energy he can store in his energy bar, making health a more precious resource.
+Each man has a health bar and an energy bar. Energy is consumed in all moves (except "rest"), some more than others. Health is lost only when other men deal damage. Energy can be regained rapidly using "rest" moves, health can be regained but at a much slower rate. A man's health places an upper limit on how much energy he can store in his energy bar, making health a more precious resource. Health can be consumed in place of energy if a man's energy hits zero.
 
 A man dies permanently when his health hits zero, and no longer occupies a position on the grid. A player is eliminated from the game when all his men are dead.
 
@@ -42,6 +42,8 @@ Health and energy of immediately nearby men may be made visible in a future upda
 1. Try identifying the relative positions of your men relatively early on in the game. Keep track of moves your men make and look for them in other men's views.
 2. Try to get your men close to each other as much as possible to avoid getting ganged up on.
 3. Isolate and surround opponent men to eliminate them while losing minimal health yourself. Ganging up is more cost-effective than 1v1 fights.
-4. Ally with trustworthy players and form pacts to not fight each other's men. Share information and destroy common enemies, before finally turning on each other.
-5. A lot of partial information is available throughout the game, don't ignore it just because you are unable to make complete deductions. Incomplete information may turn out useful later on.
-6. Feel free to strategically lie and betray your allies, and get their men into situations they can't escape. This however can have an effect on your trustworthiness for the rest of the game (or future games, if you're playing with the same people).
+4. Watch out for your energy bar. Balance moves with rest to ensure you don't end up in fights without energy.
+5. Do not use health in place of energy unless absolutely necessary.
+6. Ally with trustworthy players and form pacts to not fight each other's men. Share information and destroy common enemies, before finally turning on each other.
+7. A lot of partial information is available throughout the game, don't ignore it just because you are unable to make complete deductions. Incomplete information may turn out useful later on.
+8. Feel free to strategically lie and betray your allies, and get their men into situations they can't escape. This however can have an effect on your trustworthiness for the rest of the game (or future games, if you're playing with the same people).
